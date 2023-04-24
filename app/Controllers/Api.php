@@ -24,6 +24,18 @@ class Api extends BaseController
      * @apiBody {String} job_title 職稱
      * @apiBody {String} department 
      */
+    function user(){
+        $data = $this->request->getJSON(true);
+        
+        $response = [
+            'status'   => 200,
+            'error'    => null,
+            'messages' => [
+                'success' => '新增成功'
+            ]
+        ];
+        return $this->respondCreated($response);
+    }
 
     // 取得會員資料
     // 編輯會員列表
