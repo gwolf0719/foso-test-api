@@ -5,10 +5,7 @@ namespace App\Controllers;
 class Api extends BaseController
 {
 
-    protected function respondCreated($data = null)
-    {
-        return $this->respond($data, 201);
-    }
+    
     // 新增會員
     /**
      * @api {put} /api/user/ 新增會員
@@ -40,7 +37,7 @@ class Api extends BaseController
                 'success' => '新增成功'
             ]
         ];
-        return $this->respondCreated($response);
+        return json_encode($response);
     }
 
     // 取得會員資料
