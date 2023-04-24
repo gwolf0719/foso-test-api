@@ -20,7 +20,7 @@ $routes->set404Override();
 // If you don't want to define all routes, please use the Auto Routing (Improved).
 // Set `$autoRoutesImproved` to true in `app/Config/Feature.php` and set the following to true.
 // $routes->setAutoRoute(false);
-
+$routes->setAutoRoute(true);
 /*
  * --------------------------------------------------------------------
  * Route Definitions
@@ -31,8 +31,7 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-// put api/user 指向到 Api/user
-$routes->put('api/user', 'Api::user');
+
 
 /*
  * --------------------------------------------------------------------
