@@ -91,7 +91,7 @@ class Api extends BaseController
     /**
      * @api {put} /api/sendUserTestData/:id 上傳成績
      * @apiName 上傳成績
-     * @apiGroup User
+     * @apiGroup Test
      * @apiSampleRequest /api/sendUserTestData/:id
      * 
      * @apiParam  {Number} id 會員編號
@@ -107,6 +107,39 @@ class Api extends BaseController
             'error'    => null,
             'messages' => [
                 'success' => '新增成功'
+            ],
+            'data'=> $data
+        ];
+        return json_encode($response);
+    }
+
+    //取得成績
+    /**
+     * @api {put} /api/getUserTestData/:id 取得成績
+     * @apiName 取得成績
+     * @apiGroup Test
+     * @apiSampleRequest /api/getUserTestData/:id
+     * 
+     * @apiParam  {Number} id 會員編號
+     * @apiSuccess {String} total_score
+     * @apiSuccess {String} scores
+     * @apiSuccess {String} stage_action_types
+     * @apiSuccess {Srting} stage_weights
+     */
+
+
+    function getUserTestData($id){
+        $data = [
+            'total_score'=> 0.0,
+            'scores'=> [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00.0,0.00.0],
+            'stage_action_types'=> [0,0,0,0,0,0,0,0,0,0,0],
+            'stage_weights'=> [0.8,1.1,2.1,1.9,0,2.1,0.4,1.3,1.9,1.3,2]
+        ];
+        $response = [
+            'status'   => 200,
+            'error'    => null,
+            'messages' => [
+                'success' => '取得成功'
             ],
             'data'=> $data
         ];
