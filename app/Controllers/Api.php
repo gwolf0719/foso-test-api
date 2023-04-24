@@ -4,6 +4,11 @@ namespace App\Controllers;
 
 class Api extends BaseController
 {
+
+    protected function respondCreated($data = null)
+    {
+        return $this->respond($data, 201);
+    }
     // 新增會員
     /**
      * @api {put} /api/user/ 新增會員
@@ -24,9 +29,10 @@ class Api extends BaseController
      * @apiBody {String} job_title 職稱
      * @apiBody {String} department 
      */
-    function user(){
+    function user()
+    {
         $data = $this->request->getJSON(true);
-        
+
         $response = [
             'status'   => 200,
             'error'    => null,
